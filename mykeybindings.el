@@ -32,4 +32,10 @@
 		   ))
 (global-set-key (kbd "C-%") 'goto-match-paren)			; goto matching parenthesis
 (global-set-key (kbd "<f8>") 'load/yas/stuff)			; toggle yas-mode
-(global-set-key (kbd "<S-f3>") 'kmacro-cycle-ring-next)         ; cycle through defined macros
+
+
+(global-set-key (kbd "<S-f3>") '(lambda ()                      ; recursive edit in macros
+				  (interactive) 
+				  (kbd-macro-query 1)))
+(global-set-key (kbd "<S-f4>") 'kmacro-cycle-ring-next)         ; cycle through defined macros
+

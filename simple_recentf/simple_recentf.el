@@ -64,3 +64,5 @@
   (add-hook 'emacs-startup-hook 'rf-read-rf-list)
   (add-hook 'find-file-hooks 'rf-add-file-to-list)
   (add-hook 'kill-emacs-hook 'rf-write-rf-list))
+
+(rf-mode)

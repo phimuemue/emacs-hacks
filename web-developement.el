@@ -4,16 +4,23 @@
 
 (autoload 'php-mode "~/elisp/php-mode/php-mode.el" "Edit PHP-files (almost) nicely" t)
 
-(add-hook 'html-mode-hook 'setup-html-umlauts)
-(add-hook 'php-mode-hook 'setup-html-umlauts)
+;; (add-hook 'html-mode-hook 'setup-html-umlauts)
+;; (add-hook 'php-mode-hook 'setup-html-umlauts)
 
-(defun setup-html-umlauts ()
-  (local-set-key (kbd "ä") '(lambda () (interactive)(insert "&auml;")))
-  (local-set-key (kbd "Ä") '(lambda () (interactive)(insert "&Auml;")))
-  (local-set-key (kbd "ö") '(lambda () (interactive)(insert "&ouml;")))
-  (local-set-key (kbd "Ö") '(lambda () (interactive)(insert "&Ouml;")))
-  (local-set-key (kbd "ü") '(lambda () (interactive)(insert "&uuml;")))
-  (local-set-key (kbd "Ü") '(lambda () (interactive)(insert "&Uuml;")))
-  (local-set-key (kbd "ß") '(lambda () (interactive)(insert "&szlig;")))
-  (local-set-key (kbd "M-RET") '(lambda () (interactive)(insert "<br/>\n")))
+(define-minor-mode umlaut-mode
+  "This is a small utility for easy entring umlauts in specially encoded
+Sites. Therefore, umlauts are automatically substituted by their 
+corresponding HTML equivalents."
+  nil
+  " Ü"
+  '(
+    ((kbd "ä") . (lambda () (interactive)(insert "&auml;")))
+    ((kbd "Ä") . (lambda () (interactive)(insert "&Auml;")))
+    ((kbd "ö") . (lambda () (interactive)(insert "&ouml;")))
+    ((kbd "Ö") . (lambda () (interactive)(insert "&Ouml;")))
+    ((kbd "ü") . (lambda () (interactive)(insert "&uuml;")))
+    ((kbd "Ü") . (lambda () (interactive)(insert "&Uuml;")))
+    ((kbd "ß") . (lambda () (interactive)(insert "&szlig;")))
+    ((kbd "M-RET") . (lambda () (interactive)(insert "<br/>\n")))
+    )
   )
