@@ -7,7 +7,9 @@
 (defun load/yas/stuff ()
   (interactive)
   (yas/initialize)
-  (yas/load-directory "~/.emacs.d/yasnippet/snippets"))
+  (yas/load-directory "~/.emacs.d/yasnippet/snippets")
+  (message "yasnippet loaded"))
+(load/yas/stuff)
 
 ;; templates
 (require 'template)

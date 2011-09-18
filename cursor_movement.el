@@ -20,6 +20,7 @@
     (setq c (+ c 1))
     (if (< c n)
 	(forward-char)))
+  (forward-char)
   )
 
 ;; Scroll backward to the next occurance of a specified char

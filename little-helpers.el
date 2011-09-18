@@ -53,3 +53,8 @@
         ((looking-at "[\]\)}]") (forward-char) (backward-sexp))
         ((looking-back "[\[\({]" 1) (backward-char) (forward-sexp))
         (t nil)))
+
+;;--------------------------------------------------------------------------------
+;; saving and restoring window configurations easiyl
+;;--------------------------------------------------------------------------------
+(winner-mode 1)
