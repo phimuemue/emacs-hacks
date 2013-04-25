@@ -1,7 +1,7 @@
 ;;; Filename: move-text.el
 ;; Description: Move current line or region with M-up or M-down.
 ;; Author: Jason M <jasonm23@gmail.com>
-;; Extracted from basic-edit-toolkit.el by Andy Stewart. 
+;; Extracted from basic-edit-toolkit.el by Andy Stewart.
 ;; Copyright (C) 2009, Andy Stewart, all rights reserved.
 ;; Keywords: edit
 ;; Compatibility: GNU Emacs 23.0.60.1
@@ -26,10 +26,10 @@
 ;; Floor, Boston, MA 02110-1301, USA.
 
 ;;; Commentary:
-;; 
-;; MoveText is extracted from Basic edit toolkit. 
+;;
+;; MoveText is extracted from Basic edit toolkit.
 ;; It allows you to move the current line using M-up / M-down
-;; if a region is marked, it will move the region instead. 
+;; if a region is marked, it will move the region instead.
 ;;
 
 ;;; Installation:
@@ -72,7 +72,8 @@
         (when (or (< arg 0) (not (eobp)))
           (transpose-lines arg))
         (forward-line -1))
-      (move-to-column column t)))))
+      (move-to-column column t)
+      (indent-according-to-mode)))))
 
 (defun move-text-down (arg)
   "Move region (transient-mark-mode active) or current line
