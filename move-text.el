@@ -62,6 +62,8 @@
       (move-to-column column t)
       (set-mark (point))
       (insert text)
+      (indent-region
+       (region-beginning) (region-end))
       (exchange-point-and-mark)
       (setq deactivate-mark nil)))
    (t
